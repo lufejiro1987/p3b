@@ -19,6 +19,15 @@ $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip();
 });
 
-$(function () {
-    $('[data-toggle="popover"]').popover()
+
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover({
+         //trigger: 'focus',
+         trigger: 'click',
+         html: true,
+         content: function () {
+               return '<img class="img-fluid" src="'+$(this).data('img') + '" />';
+         },
+         title: 'Toolbox'
+   }) 
 });
